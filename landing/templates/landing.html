@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header_tag %}
+   <link rel="stylesheet" type="text/css" href="{% static 'landing/css/style.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<nav>
+    <div class="row">
+        <div class="six columns">
+            <div class="nav-left">
+                <ul>
+                    <li style="padding:0; margin:0;"><a href="#"></a>Algo<span class="highlight">Lab</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="six columns">
+            <div class="nav-right">
+                <ul>
+                    <li><a href="/login">Login</a></li> 
+                    <li><a href="/signup">Sign up</a></li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+   </nav>
+   <div class="hero">
+    <div class="wrap">
+        <div class="row">
+            <div class="headline six columns">
+                <div class="">
+                    <h1><span class="highlight">Trading Algorithms</span><br>Tuned and written<br>By <span class="highlight">Experts</span></h1><br>
+                    <span>
+                        <button class="button" id="learn-more-button">Learn more</button>
+                        <button class="button-primary">Get Started</button>
+                    </span>
+                </div>
+            </div>
+            <div class="six columns">
+                <img id="test-tube" src="{% static 'landing/img/algolab.svg' %}" />
+            </div>
+        
+        </div>
+        
+    </div>
+   </div>
+{% endblock content %}

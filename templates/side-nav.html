@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block header_tag %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/dashboard.css" %}'/>
+    <script src="https://kit.fontawesome.com/04955d02c9.js" crossorigin="anonymous"></script>
+{% endblock header_tag %}
+
+{% block content %}
+<div class="side-nav">
+    <span>
+        <div class="inner">
+            <div class="strip"></div>
+            <div class="content">
+                <a  style="cursor: pointer;" id="close"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></a>
+                <div class="pfp">
+                    <span><img id="msg-pfp" src="{% static 'userChat/img/pfp.jpg' %}"><p style="color: white;">{{ user.first_name }} {{ user.last_name }}</p></span>
+                    <span><small> &#128515; @{{ user.username }}</small></span><br>
+                    
+                </div>
+                <hr>
+                <ul>
+                    <li class="menu-item"><a href="/profiles/{{ user.username }}"><i class="fa-solid fa-user" style="color: #ffffff;"></i> Profile</a></li>
+                    <li class="menu-item"><a href="/dashboard"><i class="fa-solid fa-chart-pie" style="color: #ffffff;"></i> Dashboard</a></li>
+                    <li class="menu-item"><a href="/chat/conversations"><i class="fa-solid fa-message" style="color: #ffffff;"></i> Messages</a></li>
+                    <div class="bottom-menu">
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-gear" style="color: #ffffff;"></i> Settings</a></li>
+                        <li class="menu-item"><a href="/signout"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i> Logout</a></li>
+                    </div>
+
+                </ul>
+            </div>
+           
+        </div>
+    </span> 
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $(".usr-pfp").click(function(){
+            $(".side-nav").show();
+        })
+
+        $("#close").click(function(){
+            $(".side-nav").hide();
+        })
+    });
+
+    
+</script>
+</div>
+{% endblock content %}

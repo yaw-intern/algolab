@@ -1,0 +1,59 @@
+{% include 'side-nav.html' %}
+{% load static %}
+
+{% block header_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'userChat/css/conversations.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<div class="pfp">
+    <span><img class="usr-pfp" src="{% static 'userChat/img/pfp.jpg' %}"><p></p></span>
+</div>
+
+
+    <div class="row">
+        <div class="twelve columns">
+           <div class="chat-info">
+           <h4>Conversations</h4>
+           <hr>
+           <div class="chat-preview">
+            <div>
+                <div id="msg">
+                    <div id="msg-left">
+                        <img class="msg-pfp" src="https://i.pinimg.com/564x/28/c5/49/28c54966142ad9b4872a6a25564f6f75.jpg">
+                    </div>
+                    <a href="/chat/john" style="text-decoration: none; color: black;">
+                        <div id="msg-right">
+                            <p id="preview-username">John <small>• 11:20AM</small></p>
+                            <p id="msg-message-preview">Hey when are you free to get some co...</p>
+                        </div>
+                    </a>
+                   
+                    
+                </div>
+                <hr>
+
+                <div id="msg">
+                    <div>
+                        <img class="msg-pfp" src="https://hips.hearstapps.com/hmg-prod/images/domestic-cat-lies-in-a-basket-with-a-knitted-royalty-free-image-1592337336.jpg?">
+                    </div>
+                    <div id="msg-right">
+                        <p id="preview-username">Timothy <small>• 11:20AM</small></p>
+                    <p id="msg-message-preview">Checkout my TA on USDGBP for today...</p>
+                    
+                    </div>
+                </div>
+                <hr>
+                
+                
+            </div>
+            
+           </div>
+           </div>
+            
+        </div>
+   
+   
+</div>
+
+{% endblock content %}

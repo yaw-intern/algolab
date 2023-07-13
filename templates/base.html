@@ -1,0 +1,16 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href='{% static "css/Skeleton-2.0.4/css/normalize.css" %}'/>
+    <link rel="stylesheet" type="text/css" href='{% static "css/Skeleton-2.0.4/css/skeleton.css" %}'/>
+    <link rel="icon" type="image/x-icon" href="{% static 'landing/img/algolab.svg' %}">
+    {% block header_tag %} {% endblock header_tag %}
+    <title>AlgoLab</title>
+</head>
+<body>
+    {% block content %}{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,102 @@
+body{
+    background-color: #383838;
+    color: white;
+}
+/* Nav */
+nav{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;;
+    padding: 5px;
+    position: sticky;
+    z-index: 2;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    color: rgba(0, 0, 0, 0.568);
+    transition: ease-in-out .2s;
+}
+
+.nav-left{
+    text-align: left;
+}
+
+.nav-right{
+    text-align: right;
+}
+
+nav ul{
+    display: inline;
+    list-style: none;
+}
+
+nav li{
+    padding: 5px;
+    display: inline;
+    margin-right: 10px;
+}
+/* Hero Section */
+.wrap{
+    margin: 50px;
+}
+
+.headline{
+    margin-top: 20vh;
+    text-align: left;
+}
+
+.headline h1{
+    font-size: 8rem;
+    margin-right: 20px;
+}
+
+.highlight{
+    color:#33c3f0;
+}
+
+#learn-more-button{
+    color:white;
+}
+
+#learn-more-button:hover{
+    color: rgba(170, 169, 169, 0.733);
+}
+
+#test-tube{
+    margin-top: 20vh;
+    margin-left: 20vw;
+    height: 60vh;
+}
+
+.button-orange{
+    background-color: #f4925b !important;
+    border-color: #f4925b !important;
+    color: black;
+}
+
+.button-orange:hover{
+    background-color: #fda372 !important;
+    transition: ease-in-out .2s;
+}
+
+.hero-img{
+    width: 40vw;
+    height: 40vh;
+    margin-left: 20%;
+}
+
+@media only screen and (max-width: 600px) {
+    .headline h1{
+        font-size: 6rem;
+        margin-right: 20px;
+    }
+
+    #test-tube{
+        display: none;
+    }
+  }

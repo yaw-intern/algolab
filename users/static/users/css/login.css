@@ -1,0 +1,28 @@
+body{
+    background-color:rgb(253, 253, 249);
+    
+    padding: 50px;
+}
+
+#go-back{
+    margin-left: 50px;
+    
+}
+
+.wrap{
+    
+}
+
+.card{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 20px;
+}
+
+
+a{
+    color: black;
+}

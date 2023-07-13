@@ -1,0 +1,35 @@
+{% include 'side-nav.html' %}
+{% load static %}
+
+{% block header_tag %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<div class="pfp">
+    <span><img class="usr-pfp" src="{% static 'userChat/img/pfp.jpg' %}"><p></p></span>
+</div>
+
+<div id="dash-wrapper" class="wrap">
+    <div class="row">
+        <div class="six columns">
+            <div id="card1" class="card-rounded">
+                <small>Watchlist</small>
+                <h3>USDJPY- 140.1840</h3>
+                <h3>TSLA- 269.79</h3>
+            </div>
+        </div>
+        <div class="six columns">
+            <div class="card-rounded">
+                
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="card-rounded">
+
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% include 'side-nav.html' %}
+{% load static %}
+
+{% block header_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'userChat/css/chat.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<div class="pfp" id="chat-usr-pfp">
+    <span><img class="usr-pfp" src="{% static 'userChat/img/pfp.jpg' %}"><p></p><br> </span>
+</div>
+<div class="row">
+    <div class="twelve columns" style="padding: 0 !important;">
+        <h4 style="margin-left: 15px;">Chat with John</h4>
+       <div class="chat-info">
+          
+            <hr>
+            <div id="chat-log" class="chat-preview">
+               
+                    <!-- <div id="msg">
+                        <div id="msg-left">
+                            <img class="msg-pfp" src="https://i.pinimg.com/564x/28/c5/49/28c54966142ad9b4872a6a25564f6f75.jpg">
+                        </div>
+                        <div id="msg-right">
+                            <p id="preview-username">John <small>• 11:20AM</small></p>
+                            <p id="msg-message-preview">Hey when are you free to get some coffee</p>
+                        </div>
+                        
+                    </div> -->
+
+                
+            </div>
+       </div>
+       <div class="msg-box">
+          
+            <textarea class="u-full-width" placeholder="Type a message..." id="chat-message-input"></textarea>
+            <button class="button-primary" id="chat-message-submit">Send</button>
+          
+       </div>
+    </div>
+</div>
+    {{ room_name|json_script:"room-name" }}
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').innerHTML+= '<div id="msg"><div><img class="msg-pfp" src="{% static "userChat/img/pfp.jpg" %}"></div><div id="msg-right"><p id="preview-username">You <small>• 11:20AM</small></p><p id="msg-message-preview">' + data.message + '</p></div></div>'
+
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+{% endblock content %}

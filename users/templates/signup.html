@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/login.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<a id="go-back" href="#" onclick="history.back()"">Back</a>
+    <div class="wrap">
+        <div class="card">
+            <form method="POST" action=".">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="six columns">
+                        <label for="">First Name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="six columns">
+                        <label for="">Last Name</label>
+                        {{ form.last_name }}
+                    </div>
+                </div>
+                <label for="">Username</label>
+                {{ form.username }}
+                <label for="">Email</label>
+                {{ form.email }}
+                <label for="">Password</label>
+                {{ form.password1 }}
+                <label for="">Confirm password</label>
+                {{ form.password2 }}
+                <label for="">Date of birth</label>
+                {{ form.dateOfBirth }}
+                <input class="button button-primary" type="submit" value="Submit">
+            </form>
+            <div id="go-login">
+                <a href="/login">Have an account already? Login.</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

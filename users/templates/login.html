@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/login.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<a href="#" id="go-back" onclick="history.back()">Back</a>
+<div class="wrap">
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+           <label for="">E-mail</label>
+            <!-- <input class="u-full-width" type="email" id="exampleEmailInput"> -->
+            {{ form }}
+            <label for="">Password</label>
+            <!-- <input class="u-full-width" type="password" id="exampleEmailInput"> -->
+            <input class="button-primary" type="submit" value="Login">
+           
+           
+        </form>
+        <div id="go-login">
+            <a href="/signup">Don't have an account? Sign up.</a>
+            <br>
+            <a href="#">Forgotten password?</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

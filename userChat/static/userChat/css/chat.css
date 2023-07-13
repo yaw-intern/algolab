@@ -1,0 +1,77 @@
+body{
+    overflow-y: hidden;
+}
+
+#chat-usr-pfp{
+    height: 50px;
+}
+.chat-info{
+    margin-top: 10px;
+    padding: 10px !important;
+    /* box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.432); */
+    height: 65vh;
+    overflow-y: scroll;
+}
+
+.chat-preview{
+    margin-bottom: 20px;
+}
+
+.chat-preview p{
+
+}
+
+
+hr{
+    margin: 0;
+}
+
+#msg{
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+}
+
+#msg-right{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.button-orange{
+    background-color: #f4925b !important;
+    border-color: #f4925b !important;
+    color: white !important;
+}
+
+
+.chat-info hr{
+    margin-bottom: 10px;
+}
+
+.chat-info p {
+    margin: 0;
+}
+
+.msg-pfp{
+    border-radius: 50px;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+#msg{
+    margin-bottom: 10px;
+}
+.msg-box{
+    padding: 10px;
+   margin-top: 1px;
+}
+
+form{
+    display: flex;
+}
+
+form input{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+

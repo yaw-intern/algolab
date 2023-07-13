@@ -1,0 +1,55 @@
+body{
+    overflow-y: hidden;
+}
+.chat-info{
+    margin-top: 10px;
+    padding: 10px !important;
+    
+    height: 87vh;
+    overflow-y: scroll;
+}
+
+.chat-preview{
+    margin-bottom: 20px;
+}
+
+.chat-preview p{
+
+}
+
+
+hr{
+    margin: 0;
+}
+
+#msg{
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+}
+
+#msg-right{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+
+
+.chat-info hr{
+    margin-bottom: 10px;
+}
+
+.chat-info p {
+    margin: 0;
+}
+
+.msg-pfp{
+    border-radius: 50px;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+}
+
+#msg-message-preview{
+    
+}
+

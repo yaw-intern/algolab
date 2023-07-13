@@ -1,0 +1,33 @@
+body{
+    padding: 10px;
+}
+#profile-card{
+    background-color: white;
+    
+}
+
+
+.pfp{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.profile-pfp{
+    width: 128px;
+    height: 128px;
+    border-radius: 900px;
+}
+
+.pfp p, small{
+    margin: 0;
+    
+}
+
+.pfp small{
+    color: rgb(102, 102, 102);
+}
+
+.wrap{
+    padding-top:10px !important;
+}

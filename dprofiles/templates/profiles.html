@@ -1,0 +1,42 @@
+{% include 'side-nav.html' %}
+{% load static %}
+
+{% block header_tag %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dprofiles/css/profiles.css' %}" />
+{% endblock header_tag %}
+
+{% block content %}
+<div class="row">
+    <div id="profile-card" class="twelve columns">
+        <br>
+        <a href="#" onclick="history.back()" style=" margin-left: 50px;">Back</a>
+        <div class="pfp">
+            <span><img class="profile-pfp" src="{% static 'userChat/img/pfp.jpg' %}"></span>
+            <p>{{ queriedUser.first_name }} {{ queriedUser.last_name }}</p>
+            <small>@{{ queriedUser.username }}</small>
+            <small><i class="fa-solid fa-location-dot"></i> Slough, UK </small>
+            <p>Follow for daily TA's ‼️. Big Steppa 💰💷. <br>🔜 🔛 🔝 📈</p><br>
+            
+            {% if queriedUser.username == user.username %}
+            <button class="button" disabled>Message</button>
+                <button class="button-primary">Edit Profile</button>
+            {% else %}
+            <button class="button" >Message</button>
+            <button class="button-primary">Follow</button>
+            {% endif %}
+            
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="card-rounded">
+        <h3>Feed</h3>
+        {% if queriedUser.username == user.username %}
+            <p style="text-align: center; color: rgb(102, 102, 102);">You have no posts at the moment...</p>
+        {% else %}
+            <p style="text-align: center; color: rgb(102, 102, 102);">{{ queriedUser.first_name }} has no posts at the moment...</p>
+        {% endif %}
+    </div>    
+</div>
+{% endblock content %}
