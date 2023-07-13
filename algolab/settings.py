@@ -96,12 +96,12 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.',
         'NAME': 'AlgoLabDB',
-        'USER': 'root',
+        'USER': '',
         'PASSWORD': '',
         'HOST':'',
-        'PORT':'3306',
+        'PORT':'',
     }
 }
 
