@@ -18,11 +18,14 @@
             <p>Follow for daily TA's ‼️. Big Steppa 💰💷. <br>🔜 🔛 🔝 📈</p><br>
             
             {% if queriedUser.username == user.username %}
-            <button class="button" disabled>Message</button>
+                <button class="button" disabled>Message</button>
                 <button class="button-primary">Edit Profile</button>
-            {% else %}
-            <button class="button" >Message</button>
-            <button class="button-primary">Follow</button>
+            {% elif user.is_authenticated and queriedUser != user.username %}
+                <button class="button" >Message</button>
+                <button class="button-primary">Follow</button>
+            {% else %} 
+            
+            <p>Log in eediat!</p>
             {% endif %}
             
         </div>

@@ -97,7 +97,7 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.',
-        'NAME': 'AlgoLabDB',
+        'NAME': '',
         'USER': '',
         'PASSWORD': '',
         'HOST':'',

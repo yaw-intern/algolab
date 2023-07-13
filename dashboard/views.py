@@ -5,6 +5,7 @@ import yfinance as yf
 
 def dashboard(request):
     if request.user.is_authenticated:
+        user = request.user
         return render(request, 'dashboard.html', {'user':user})
     else:
         return redirect('/login')
